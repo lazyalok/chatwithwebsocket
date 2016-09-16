@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+  <head>
+  <title>Frnz Group</title>
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <style>
+  body{
+margin:0 auto;
+padding:0;
+}
+html{
+<!-- background-image:url("feellight.jpg"); -->
+-webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+  background-size: cover;
+}
+.field{
+padding: 5px;
+border: 2px solid #ccc;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+margin: auto;
+display: block;
+margin: 1em;
+width: 100%;
+}
+  header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #eee;
+	width: 100%;
+	height: 55px;
+	z-index: 100;
+	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	box-shadow: 0 0 4px #eee;
+}
+
+form{
+margin: auto;
+position: absolute;
+left: 40%;
+top: 40%;
+width: 28%;
+}
+
+.tree{
+background-image: url("pencil010.png");
+min-height: 500px;
+background-repeat: no-repeat;
+width: 34%;
+float: left;
+background-size: 431px;
+margin-top: 4em;
+}
+
+.head-title{
+
+width: 173px;
+font-family: cursive;
+font-size: 33px;
+margin: auto;
+color: #E0E0E0;
+text-shadow: 2px -2px #908787;
+}
+
+
+  </style>
+
+  <script>
+  
+  $(document).ready(function (){
+		  $('#emaild').keypress(function (e) {
+		    checkNSubmit(e)
+		  });
+		   $('#usrname').keypress(function (e) {
+		    checkNSubmit(e)
+		  });
+		  
+  });
+  
+  function checkNSubmit(e){
+  var key = e.which;
+   if(key == 13)  // the enter key code
+		  {
+		  if(ValidateEmail($('#emaild').val())  && $.trim($('#usrname').val()).length > 0){
+		     $('form').submit();
+		  } else{
+		    // alert('please enter valid email address');
+		  }
+			
+		  }
+  
+  }
+   function ValidateEmail(email) {
+        var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        return expr.test(email);
+    };
+  </script>
+  </head>
+  <body>
+  <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '864116980305351',
+          status     : true,
+          xfbml      : true
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+<header> <div class="head-title">frnz group</div></header>
+ 
+<div class="tree"></div>
+<form method='get' action='home'>
+<input id="usrname" type="text" name="name" class="field" placeholder="Please enter full Name" required='true'></input>
+<input id="emaild" type="email" name="email" class="field" placeholder="Please enter email id" required='true'></input>
+</form>
+  </body>
+</html>
