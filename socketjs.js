@@ -35,14 +35,14 @@ app.get('/home', function (req, res) {
     service: 'Yahoo',
     auth: {
         user: 'alokpathak@rocketmail.com',
-        pass: 'Pa55word@87'
+        pass: ''
     }
 });
 
 // setup e-mail data with unicode symbols
 var mailOptions = {
-    from: 'Alok Pathak <alokpathak@rocketmail.com>', // sender address
-    to: 'alok baba <alokpathak@rocketmail.com>', // list of receivers
+    from: '', // sender address
+    to: '', // list of receivers
     subject: 'Hello Baba', // Subject line
     text: 'Hello world ', // plaintext body
     html: '<b>Hello world âœ”</b>' // html body
